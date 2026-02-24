@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormApiGMPKlik.Properties;
-using ClosedXML.Excel;
+using WinFormApiGMPKlik.Services;
 
 namespace WinFormApiGMPKlik.Forms
 {
@@ -25,6 +26,8 @@ namespace WinFormApiGMPKlik.Forms
         private int _pageSize = 10;
         private UserFilterModel _currentFilter = new UserFilterModel();
         private Settings _s => Settings.Default;
+        private IUserService _userService;
+
         public UserManagementForm()
         {
             InitializeComponent();
@@ -235,152 +238,61 @@ namespace WinFormApiGMPKlik.Forms
 
         private async Task LoadUsersAsync(int page)
         {
-            //try
-            //{
+            try
+            {
                 ShowLoading(true);
-                UpdateStatus("Loading data...");
+                UpdateStatus("Loading users...");
 
-                // Cek internet dulu
-                if (!await CheckInternetConnectionAsync())
+                var query = new UserQueryParams
                 {
-                    MessageBox.Show("Koneksi internet terputus. Data tidak dapat dimuat.",
-                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    Page = page,
+                    PageSize = _pageSize,
+                    Search = txtSearch.Text?.Trim(),
+                    SortBy = cmbSortBy.SelectedItem?.ToString() ?? "CreatedAt",
+                    SortDescending = chkSortDescending.Checked,
+                    IsActive = GetFilterValue(cmbIsActive),
+                    IsDeleted = _isCurrentUserSuperAdmin ? GetFilterValue(cmbIsDeleted) : null,
+                    Role = cmbRole.SelectedItem?.ToString() != "All" ? cmbRole.SelectedItem?.ToString() : null,
+                    CreatedFrom = dtpCreatedFrom.Checked ? dtpCreatedFrom.Value : null,
+                    CreatedTo = dtpCreatedTo.Checked ? dtpCreatedTo.Value : null
+                };
+
+                var (users, metadata) = await _userService.GetUsersAsync(query);
+
+                _users = users;
+                _paginationMetadata = metadata;
+
+                // Filter SuperAdmin protection
+                if (!_isCurrentUserSuperAdmin)
+                {
+                    _users = _users.Where(u => !u.Roles.Contains("SuperAdmin")).ToList();
                 }
 
-                _currentPage = page;
-
-                // Build query string dari filter
-                var queryParams = BuildQueryParameters();
-                var url = $"/api/v1/users?{queryParams}";
-
-                // Debug: Log URL
-                System.Diagnostics.Debug.WriteLine($"Calling API: {url}");
-                System.Diagnostics.Debug.WriteLine($"Token: {_s.AccessToken?.Substring(0, 20)}...");
-
-                var response = await ApiHelper.ExecuteWithRefreshAsync(client =>
-                    client.GetAsync(url));
-
-                // FIX: Handle 401 dengan lebih spesifik
-                if (response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-                {
-                    var errorContent = await response.Content.ReadAsStringAsync();
-                    System.Diagnostics.Debug.WriteLine($"401 Response: {errorContent}");
-
-                    MessageBox.Show("Session tidak valid. Token mungkin expired atau tidak terkirim dengan benar.\n\nSilakan login kembali.",
-                        "Unauthorized", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    HandleSessionExpired();
-                    return;
-                }
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var json = await response.Content.ReadAsStringAsync();
-                    var result = JsonSerializer.Deserialize<ApiResponse<List<UserViewModel>>>(json, new JsonSerializerOptions
-                    {
-                        PropertyNameCaseInsensitive = true
-                    });
-
-                    if (result?.Data != null)
-                    {
-                        _users = result.Data;
-                        _paginationMetadata = result.Metadata;
-
-                        // Filter client-side untuk SuperAdmin protection
-                        if (!_isCurrentUserSuperAdmin)
-                        {
-                            _users = _users.Where(u => !u.Roles.Contains("SuperAdmin")).ToList();
-                        }
-
-                        BindDataGrid();
-                        UpdatePaginationControls();
-                        UpdateTotalRecords();
-                    }
-                }
-                else
-                {
-                    var errorContent = await response.Content.ReadAsStringAsync();
-                    var errorResponse = JsonSerializer.Deserialize<ApiResponse<object>>(errorContent);
-                    var errorMessage = errorResponse?.Message ?? errorContent;
-
-                    MessageBox.Show($"Gagal load data: {errorMessage}\nStatus: {response.StatusCode}", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            //}
-            //catch (UnauthorizedAccessException)
-            //{
-            //    HandleSessionExpired();
-            //}
-            //catch (HttpRequestException httpEx)
-            //{
-            //    MessageBox.Show($"Error koneksi: {httpEx.Message}\nPastikan API server berjalan di {_s.ApiBaseUrl}",
-            //        "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"Error: {ex.Message}\n\nDetail: {ex.InnerException?.Message}", "Error",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //finally
-            //{
-            //    ShowLoading(false);
-            //    UpdateStatus("Ready");
-            //}
+                BindDataGrid();
+                UpdatePaginationControls();
+                UpdateTotalRecords();
+            }
+            catch (UnauthorizedAccessException)
+            {
+                HandleSessionExpired();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading users: {ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                ShowLoading(false);
+                UpdateStatus("Ready");
+            }
         }
 
-        private string BuildQueryParameters()
+        private bool? GetFilterValue(ComboBox cmb)
         {
-            var parameters = new List<string>
-            {
-                $"page={_currentPage}",
-                $"pageSize={_pageSize}"
-            };
-
-            // Search
-            if (!string.IsNullOrWhiteSpace(txtSearch.Text))
-                parameters.Add($"search={Uri.EscapeDataString(txtSearch.Text)}");
-
-            // Branch
-            if (cmbBranch.SelectedItem != null && cmbBranch.SelectedItem.ToString() != "All")
-            {
-                var branchId = cmbBranch.SelectedItem.ToString()?.Split('-')[0].Trim();
-                if (!string.IsNullOrEmpty(branchId))
-                    parameters.Add($"branchId={branchId}");
-            }
-
-            // IsActive
-            if (cmbIsActive.SelectedItem?.ToString() == "Active Only")
-                parameters.Add("isActive=true");
-            else if (cmbIsActive.SelectedItem?.ToString() == "Inactive Only")
-                parameters.Add("isActive=false");
-
-            // IsDeleted (hanya SuperAdmin)
-            if (_isCurrentUserSuperAdmin)
-            {
-                if (cmbIsDeleted.SelectedItem?.ToString() == "Deleted Only")
-                    parameters.Add("isDeleted=true");
-                else if (cmbIsDeleted.SelectedItem?.ToString() == "Active Only")
-                    parameters.Add("isDeleted=false");
-            }
-
-            // Role
-            if (cmbRole.SelectedItem != null && cmbRole.SelectedItem.ToString() != "All")
-                parameters.Add($"role={cmbRole.SelectedItem}");
-
-            // Date Range
-            if (dtpCreatedFrom.Checked)
-                parameters.Add($"createdFrom={dtpCreatedFrom.Value:yyyy-MM-dd}");
-            if (dtpCreatedTo.Checked)
-                parameters.Add($"createdTo={dtpCreatedTo.Value:yyyy-MM-dd}");
-
-            // Sorting
-            if (cmbSortBy.SelectedItem != null)
-                parameters.Add($"sortBy={cmbSortBy.SelectedItem}");
-
-            parameters.Add($"sortDescending={chkSortDescending.Checked}");
-
-            return string.Join("&", parameters);
+            var selected = cmb.SelectedItem?.ToString();
+            return selected == "Active Only" ? true :
+                   selected == "Inactive Only" ? false : null;
         }
 
         private void BindDataGrid()

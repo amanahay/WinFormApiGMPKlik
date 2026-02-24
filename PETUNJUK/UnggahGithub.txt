@@ -1,0 +1,32 @@
+AWAL UNGGAH
+
+git add .
+git commit -m "Initial commit WinFormApiGMPKlik"
+git branch -M main
+git remote add origin https://github.com/amanahay/WinFormApiGMPKlik.git
+git push -u origin main
+
+======================================
+Langkah selanjutnya setelah berhasil unggah ke GitHub:
+
+# Ignore Visual Studio temporary files, build results, and
+BUAT FILE .gitignore
+ISI NYA:
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+🔥 2️⃣ Hapus cache file sampah dari git (sekali saja)
+git rm -r --cached .vs
+git rm -r --cached bin
+git rm -r --cached obj
+
+🔥 Setelah ini cara update project ke GitHub
+
+Setiap ada perubahan file:
+
+git add .
+git commit -m "update fitur xxx"
+git push

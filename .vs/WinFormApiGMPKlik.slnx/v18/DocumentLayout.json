@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|c:\\users\\yohan\\source\\repos\\winformapigmpklik\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|c:\\users\\yohan\\source\\repos\\winformapigmpklik\\petunjuk\\unggahgithub.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|solutionrelative:petunjuk\\unggahgithub.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|c:\\users\\yohan\\source\\repos\\winformapigmpklik\\usermanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|solutionrelative:usermanagementform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|c:\\users\\yohan\\source\\repos\\winformapigmpklik\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|solutionrelative:services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|c:\\users\\yohan\\source\\repos\\winformapigmpklik\\helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|solutionrelative:helpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|c:\\users\\yohan\\source\\repos\\winformapigmpklik\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|solutionrelative:loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E63CFDD0-9CF5-E98D-BFCC-9FD302CDA64D}|WinFormApiGMPKlik.csproj|c:\\users\\yohan\\source\\repos\\winformapigmpklik\\dashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -114,11 +122,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\Services\\UserService.cs",
+              "RelativeToolTip": "Services\\UserService.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAjwEAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T23:55:33.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UnggahGithub.txt",
+              "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\PETUNJUK\\UnggahGithub.txt",
+              "RelativeDocumentMoniker": "PETUNJUK\\UnggahGithub.txt",
+              "ToolTip": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\PETUNJUK\\UnggahGithub.txt",
+              "RelativeToolTip": "PETUNJUK\\UnggahGithub.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-02-23T23:41:54.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "PengaturanKoneksi.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\PengaturanKoneksi.cs",
               "RelativeDocumentMoniker": "PengaturanKoneksi.cs",
@@ -130,7 +164,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "UserManagementForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\UserManagementForm.cs",
               "RelativeDocumentMoniker": "UserManagementForm.cs",
@@ -142,7 +176,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "DashboardForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\DashboardForm.cs",
               "RelativeDocumentMoniker": "DashboardForm.cs",
@@ -154,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
@@ -166,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Settings.settings",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\Properties\\Settings.settings",
               "RelativeDocumentMoniker": "Properties\\Settings.settings",
@@ -178,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "AppSettings.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\AppSettings.cs",
               "RelativeDocumentMoniker": "AppSettings.cs",
@@ -191,7 +225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Settings.settings",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\Properties\\Settings.settings",
               "RelativeDocumentMoniker": "Properties\\Settings.settings",
@@ -202,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
@@ -213,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "LoginForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\LoginForm.Designer.cs",
               "RelativeDocumentMoniker": "LoginForm.Designer.cs",
@@ -226,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "AssignRoleForm.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\AssignRoleForm.cs",
               "RelativeDocumentMoniker": "AssignRoleForm.cs",
@@ -238,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -251,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "DashboardForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\DashboardForm.Designer.cs",
               "RelativeDocumentMoniker": "DashboardForm.Designer.cs",
@@ -264,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "DashboardForm.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\DashboardForm.cs",
               "RelativeDocumentMoniker": "DashboardForm.cs",
@@ -277,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "DashboardForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\DashboardForm.cs",
               "RelativeDocumentMoniker": "DashboardForm.cs",
@@ -288,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "UserManagementForm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\UserManagementForm.Designer.cs",
               "RelativeDocumentMoniker": "UserManagementForm.Designer.cs",
@@ -301,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "UserManagementForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\UserManagementForm.cs",
               "RelativeDocumentMoniker": "UserManagementForm.cs",
@@ -318,27 +352,27 @@
               "RelativeDocumentMoniker": "UserManagementForm.cs",
               "ToolTip": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\UserManagementForm.cs",
               "RelativeToolTip": "UserManagementForm.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAA0wC8AAABeAAAAAAAAAA==",
+              "ViewState": "AgIAACgBAAAAAAAAAAAAADsBAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T21:33:04.739Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Helpers.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\Helpers.cs",
               "RelativeDocumentMoniker": "Helpers.cs",
               "ToolTip": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\Helpers.cs",
               "RelativeToolTip": "Helpers.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAkwEwAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAkwDwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-22T21:32:44.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "LoginForm.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\LoginForm.cs",
               "RelativeDocumentMoniker": "LoginForm.cs",
@@ -351,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "DaftarMandiri.Designer.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\DaftarMandiri.Designer.cs",
               "RelativeDocumentMoniker": "DaftarMandiri.Designer.cs",
@@ -363,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "PengaturanKoneksi.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\PengaturanKoneksi.cs",
               "RelativeDocumentMoniker": "PengaturanKoneksi.cs",
@@ -376,7 +410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "PengaturanKoneksi.Designer.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\PengaturanKoneksi.Designer.cs",
               "RelativeDocumentMoniker": "PengaturanKoneksi.Designer.cs",
@@ -389,7 +423,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "PengaturanKoneksi.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\PengaturanKoneksi.cs",
               "RelativeDocumentMoniker": "PengaturanKoneksi.cs",
@@ -400,7 +434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "Settings.Designer.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\Properties\\Settings.Designer.cs",
               "RelativeDocumentMoniker": "Properties\\Settings.Designer.cs",
@@ -413,7 +447,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "DaftarMandiri.cs",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\DaftarMandiri.cs",
               "RelativeDocumentMoniker": "DaftarMandiri.cs",
@@ -426,7 +460,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "DaftarMandiri.cs [Design]",
               "DocumentMoniker": "C:\\Users\\yohan\\source\\repos\\WinFormApiGMPKlik\\DaftarMandiri.cs",
               "RelativeDocumentMoniker": "DaftarMandiri.cs",
